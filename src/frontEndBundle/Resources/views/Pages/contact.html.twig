@@ -1,11 +1,14 @@
 {% extends 'frontEndBundle:Base:blankPlage.html.twig' %}
 
 {% block contentPage %}
-    <div class="c_contact">
-        {{ form_start(form) }}
-        <div class="form-group">
-            {{ form_widget(form) }}
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6">
+        <div class="c_contact">
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_widget(form) }}
+            </div>
+            {{ form_end(form) }}
         </div>
-        {{ form_end(form) }}
     </div>
 {% endblock %}
