@@ -62,4 +62,20 @@ class DefaultController extends Controller
     {
         return $this->render('frontEndBundle:Pages:departementurgentiste.html.twig', ['title' => 'Urgentiste']);
     }
+
+    /**
+     * @Route("/assurances", name="assurances")
+     */
+    public function assurancesAction()
+    {
+        return $this->render('frontEndBundle:Pages:assurances.html.twig', ['title' => 'Urgentiste']);
+    }
+
+    /**
+     * @Route("/Droits_et_devoirs", name="ded")
+     */
+    public function dedAction()
+    {
+        return $this->render('frontEndBundle:Pages:ded.html.twig', ['title' => 'Urgentiste']);
+    }
 }
