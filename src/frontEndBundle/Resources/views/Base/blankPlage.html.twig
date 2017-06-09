@@ -1,0 +1,13 @@
+{% extends 'frontEndBundle:Base:footer.html.twig' %}
+
+{% block content %}
+    <div class="c-layout-page">
+        <div class="c-content-box c-size-md c-bg-white">
+            <div class="container">
+                <div class="row">
+                    {% block contentPage %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
