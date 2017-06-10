@@ -124,6 +124,17 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($contact);
             $em->flush();
+            $message = new \Swift_Message('LSMS - Merci de nous avoir contacté');
+            $message
+                ->setFrom('contact@cedricdalat.fr')
+                ->setTo($contact->getEmail())
+                ->setBody(
+                    $this->renderView(
+                        'frontEndBundle:Email:contact.html.twig',
+                        array('name' => $contact->getName())
+                    ),
+                    'text/html'
+                );
             return $this->redirectToRoute('homepage');
         }
         return $this->render('frontEndBundle:Pages:contact.html.twig', array(
