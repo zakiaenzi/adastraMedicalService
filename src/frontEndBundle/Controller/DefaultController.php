@@ -131,7 +131,10 @@ class DefaultController extends Controller
                 ->setBody(
                     $this->renderView(
                         'frontEndBundle:Email:contact.html.twig',
-                        array('name' => $contact->getName())
+                        array(
+                            'name' => $contact->getName(),
+                            'title' => 'Merci de nous avoir contacté'
+                        )
                     ),
                     'text/html'
                 );
