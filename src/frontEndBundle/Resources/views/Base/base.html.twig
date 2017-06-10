@@ -35,7 +35,7 @@
     <link href="{{ asset('/includes/plugins/slider-for-bootstrap/css/slider.css') }}" rel="stylesheet" type="text/css"/>
     <!-- END: BASE PLUGINS -->
     <!-- BEGIN: PAGE STYLES -->
-    <link href="{{ asset('/includes/plugins/ilightbox/css/ilightbox.css') }}" rel="stylesheet" type="text/css"/>
+    {% block stylesPage %}{% endblock %}
     <!-- END: PAGE STYLES -->
     <!-- BEGIN THEME STYLES -->
     <link href="{{ asset('/includes/demos/index/css/plugins.css') }}" rel="stylesheet" type="text/css"/>
@@ -47,7 +47,7 @@
     <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 
-<body class="c-layout-header-fixed c-layout-header-mobile-fixed">
+<body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
 <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
 <!-- BEGIN: HEADER -->
     {% block header %}{% endblock %}
@@ -115,18 +115,7 @@
 </script>
 <!-- END: THEME SCRIPTS -->
 <!-- BEGIN: PAGE SCRIPTS -->
-<script src="{{ asset('/includes/demos/default/js/scripts/revo-slider/slider-4.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/includes/plugins/isotope/isotope.pkgd.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/includes/plugins/isotope/imagesloaded.pkgd.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/includes/plugins/isotope/packery-mode.pkgd.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/includes/plugins/ilightbox/js/jquery.requestAnimationFrame.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/includes/plugins/ilightbox/js/jquery.mousewheel.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/includes/plugins/ilightbox/js/ilightbox.packed.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/includes/demos/default/js/scripts/pages/isotope-gallery.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/includes/plugins/revo-slider/js/extensions/revolution.extension.parallax.min.js') }}"
-        type="text/javascript"></script>
-<script src="{{ asset('/includes/plugins/revo-slider/js/extensions/revolution.extension.kenburn.min.js') }}"
-        type="text/javascript"></script>
+{% block scriptsPage %}{% endblock %}
 <!-- END: PAGE SCRIPTS -->
 <!-- END: LAYOUT/BASE/BOTTOM -->
 </body>
