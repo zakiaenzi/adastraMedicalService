@@ -13,3 +13,5 @@ app:
     type: annotation
 captcha_routing:
     resource: "@CaptchaBundle/Resources/config/routing.yml"
+fos_user:
+    resource: "@AppBundle/Resources/routing/all.xml"
