@@ -3,10 +3,12 @@
 namespace frontEndBundle\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Common\Persistence\ManagerRegistry;
 use frontEndBundle\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -107,6 +109,7 @@ class DefaultController extends Controller
                 'style' => 'height:250px;'
             )))
             ->add('captcha', 'Captcha\Bundle\CaptchaBundle\Form\Type\CaptchaType', array(
+                'label' => 'Merci de remplir le Captcha',
                 'captchaConfig' => 'ExampleCaptcha'
             ))
             ->add('save', SubmitType::class, array('label' => 'Envoyer',
@@ -118,6 +121,9 @@ class DefaultController extends Controller
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $contact = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($contact);
+            $em->flush();
             return $this->redirectToRoute('homepage');
         }
         return $this->render('frontEndBundle:Pages:contact.html.twig', array(
