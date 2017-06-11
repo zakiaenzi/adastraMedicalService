@@ -25,25 +25,25 @@
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <ul class="c-links c-theme-ul">
                             <li>
-                                <a href="#">About Jango</a>
+                                <a href="{{ url('homepage') }}">Acceuil</a>
                             </li>
                             <li>
-                                <a href="#">Privacy Policy</a>
+                                <a href="{{ url('contactus') }}">Contact</a>
                             </li>
                             <li>
-                                <a href="#">Terms & Conditions</a>
+                                <a href="{{ url('ded') }}">Droits et devoirs</a>
                             </li>
                             <li>
-                                <a href="#">Delivery</a>
+                                <a href="{{ url('assurances') }}">Assurances</a>
                             </li>
                             <li>
-                                <a href="#">Promotions</a>
+                                <a href="{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}{{ url('homepageMedecin') }}{% endif %}">Espace Médecin</a>
                             </li>
                             <li>
-                                <a href="#">News</a>
+                                <a href="#">Espace LSPD</a>
                             </li>
                         </ul>
-                        <ul class="c-links c-theme-ul">
+                        {#<ul class="c-links c-theme-ul">
                             <li>
                                 <a href="#">Blogs</a>
                             </li>
@@ -62,7 +62,7 @@
                             <li>
                                 <a href="#">Stats</a>
                             </li>
-                        </ul>
+                        </ul>#}
                     </div>
                     <div class="col-md-5 col-sm-6 col-xs-12">
                         <p class="c-text c-font-16 c-font-regular">
@@ -79,14 +79,12 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="c-content-title-1 c-title-md">
-                            <h3 class="c-font-uppercase c-font-bold">About
-                                <span class="c-theme-font">JANGO</span>
+                            <h3 class="c-font-uppercase c-font-bold">Notre
+                                <span class="c-theme-font">Addresse</span>
                             </h3>
                             <div class="c-line-left hide"></div>
                         </div>
-                        <p class="c-text c-font-16 c-font-regular">Tolerare unus ducunt ad brevis buxum. Est alter
-                            buxum, cesaris. Eheu, lura! Racanas crescere in emeritis oenipons! Ubi est rusticus
-                            repressor? Lixa grandis clabulare est. Eposs tolerare.</p>
+                        <p class="c-text c-font-16 c-font-regular">32 Franklin Rossvelt Blvd <br><bold>90000  Los Santos</bold></p>
                     </div>
                     <div class="col-md-5">
                         <div class="c-content-title-1 c-title-md">

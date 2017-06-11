@@ -148,7 +148,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/Medecin/{username}", name="medecin")
+     * @Route("/File/Attestation/{username}", name="medecin")
      */
     public function medecinAction(Request $request, $username)
     {

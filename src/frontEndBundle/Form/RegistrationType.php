@@ -25,30 +25,46 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', TextType::class, array('label' => 'Votre login', 'attr' => array(
-                'class' => 'form-control c-square c-theme input-lg'
-            )))
-            ->add('password', PasswordType::class, array('label' => 'Votre mot de passe', 'attr' => array(
-                'class' => 'form-control c-square c-theme input-lg'
-            )))
-            ->add('lastname', TextType::class, array('label' => 'Votre nom', 'attr' => array(
-                'class' => 'form-control c-square c-theme input-lg'
-            )))
-            ->add('firstname', TextType::class, array('label' => 'Votre prenom', 'attr' => array(
-                'class' => 'form-control c-square c-theme input-lg'
-            )))
-            ->add('email', EmailType::class, array('label' => 'Votre Email', 'attr' => array(
-                'class' => 'form-control c-square c-theme input-lg'
-            )))
-            ->add('nationality', TextType::class, array('label' => 'Quelle est votre nationalitée', 'attr' => array(
-                'class' => 'form-control c-square c-theme input-lg'
-            )))
-            ->add('phone', NumberType::class, array('label' => 'Quelle est votre numéro de téléphone (ig)', 'attr' => array(
-                'class' => 'form-control c-square c-theme input-lg'
-            )))
-            ->add('address', TextType::class, array('label' => 'Quelle est votre addresse (ig)', 'attr' => array(
-                'class' => 'form-control c-square c-theme input-lg'
-            )))
+            ->add('username', TextType::class, array(
+                'label' => 'Votre login',
+                'attr' => array(
+                    'class' => 'form-control c-square c-theme input-lg'
+                )))
+            ->add('plainPassword', PasswordType::class, array(
+                'label' => 'Votre mot de passe',
+                'attr' => array(
+                    'class' => 'form-control c-square c-theme input-lg'
+                )))
+            ->add('lastname', TextType::class, array(
+                'label' => 'Votre nom',
+                'attr' => array(
+                    'class' => 'form-control c-square c-theme input-lg'
+                )))
+            ->add('firstname', TextType::class, array(
+                'label' => 'Votre prenom',
+                'attr' => array(
+                    'class' => 'form-control c-square c-theme input-lg'
+                )))
+            ->add('email', EmailType::class, array(
+                'label' => 'Votre Email',
+                'attr' => array(
+                    'class' => 'form-control c-square c-theme input-lg'
+                )))
+            ->add('nationality', TextType::class, array(
+                'label' => 'Quelle est votre nationalitée',
+                'attr' => array(
+                    'class' => 'form-control c-square c-theme input-lg'
+                )))
+            ->add('phone', NumberType::class, array(
+                'label' => 'Quelle est votre numéro de téléphone (ig)',
+                'attr' => array(
+                    'class' => 'form-control c-square c-theme input-lg'
+                )))
+            ->add('address', TextType::class, array(
+                'label' => 'Quelle est votre addresse (ig)',
+                'attr' => array(
+                    'class' => 'form-control c-square c-theme input-lg'
+                )))
             ->add('specialisation', ChoiceType::class, array(
                 'label' => 'Quelle est votre spécialisation (ig)',
                 'attr' => array(
@@ -64,11 +80,12 @@ class RegistrationType extends AbstractType
                     'class' => 'form-control c-square c-theme input-lg'
                 )))
             ->add('formation', CKEditorType::class, array(
-                'label' => 'Votre formation',
+                'label' => 'Votre formation scolaire',
                 'config' => array(
                     'uiColor' => '#ffffff',
                 )))
-            ->add('skills', TextType::class, array('label' => 'Quelles sont vos compétences',
+            ->add('skills', TextType::class, array(
+                'label' => 'Quelles sont vos compétences',
                 'attr' => array(
                     'class' => 'form-control c-square c-theme input-lg'
                 )))
@@ -80,11 +97,7 @@ class RegistrationType extends AbstractType
             ->add('captcha', 'Captcha\Bundle\CaptchaBundle\Form\Type\CaptchaType', array(
                 'label' => 'Merci de remplir le Captcha',
                 'captchaConfig' => 'ExampleCaptcha'
-            ))
-            ->add('save', SubmitType::class, array('label' => 'Envoyer',
-                'attr' => array(
-                    'class' => 'btn c-theme-btn c-btn-uppercase btn-lg c-btn-bold c-btn-square',
-                )));
+            ));
     }
 
 

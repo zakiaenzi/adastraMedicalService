@@ -3,6 +3,8 @@
 security:
 
     role_hierarchy:
+        ROLE_LSPD:        ROLE_USER
+        ROLE_MEDECIN:     ROLE_USER
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
@@ -41,3 +43,7 @@ security:
             - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/admin/, role: ROLE_ADMIN }
+            - { path: ^/Medecin/, role: ROLE_MEDECIN }
+            - { path: ^/LSPD/, role: ROLE_LSPD }
+            - { path: ^/File/, role: ROLE_LSPD }
+            - { path: ^/File/, role: ROLE_MEDECIN }

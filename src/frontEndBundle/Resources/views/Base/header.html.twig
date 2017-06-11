@@ -87,6 +87,13 @@
                                             class="c-arrow c-toggler"></span></a>
                             </li>
 
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                <li>
+                                    <a href="{{ url('homepageMedecin') }}" class="c-link dropdown-toggle">Medecin<span
+                                                class="c-arrow c-toggler"></span></a>
+                                </li>
+                            {% endif %}
+
 
                             {#<li class="c-search-toggler-wrapper">
                                 <a href="#" class="c-btn-icon c-search-toggler"><i class="fa fa-search"></i></a>
