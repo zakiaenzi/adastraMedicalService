@@ -166,6 +166,7 @@ class DefaultController extends Controller
             'specialty' => $doctor->getSpecialisation(),
             'skills' => $doctor->getSkills(),
             'nationality' => $doctor->getNationality(),
+            'formation' => $doctor->getFormation(),
         ]);
     }
 

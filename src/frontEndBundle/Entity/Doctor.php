@@ -88,6 +88,13 @@ class Doctor extends BaseUser
     private $image;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="formation", type="text")
+     */
+    private $formation;
+
+    /**
      * @Assert\NotBlank()
      *
      * @CaptchaAssert\ValidCaptcha(
@@ -379,6 +386,24 @@ class Doctor extends BaseUser
     {
         $this->captcha = $captcha;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFormation()
+    {
+        return $this->formation;
+    }
+
+    /**
+     * @param mixed $formation
+     */
+    public function setFormation($formation)
+    {
+        $this->formation = $formation;
+    }
+
+
 
 }
 

@@ -18,6 +18,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 
 class RegistrationType extends AbstractType
 {
@@ -50,6 +51,9 @@ class RegistrationType extends AbstractType
             )))
             ->add('specialisation', ChoiceType::class, array(
                 'label' => 'Quelle est votre spécialisation (ig)',
+                'attr' => array(
+                    'class' => 'form-control c-theme',
+                ),
                 'choices' => array(
                     'Psychologie' => 'Psychologie',
                     'Proctologie' => 'Proctologie',
@@ -58,6 +62,11 @@ class RegistrationType extends AbstractType
                 ),
                 'attr' => array(
                     'class' => 'form-control c-square c-theme input-lg'
+                )))
+            ->add('formation', CKEditorType::class, array(
+                'label' => 'Votre formation',
+                'config' => array(
+                    'uiColor' => '#ffffff',
                 )))
             ->add('skills', TextType::class, array('label' => 'Quelles sont vos compétences',
                 'attr' => array(
