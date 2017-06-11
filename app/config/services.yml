@@ -33,8 +33,13 @@ services:
             class: frontEndBundle\Form\RegistrationType
             tags:
                 - { name: form.type, alias: app_user_registration }
+    app_form_changepassword:
+            class: frontEndBundle\Form\ChangePasswordType
+            tags:
+                - { name: form.type, alias: app_user_changepassword }
 
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+

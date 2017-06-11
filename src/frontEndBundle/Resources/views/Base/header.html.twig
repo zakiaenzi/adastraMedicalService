@@ -1,7 +1,8 @@
 {% extends 'frontEndBundle:Base:base.html.twig' %}
 
 {% block header %}
-    <header class="c-layout-header c-layout-header-2 c-layout-header-dark-mobile c-header-transparent-dark" data-minimize-offset="80">
+    <header class="c-layout-header c-layout-header-2 c-layout-header-dark-mobile c-header-transparent-dark"
+            data-minimize-offset="80">
         <div class="c-navbar">
             <div class="container">
                 <!-- BEGIN: BRAND -->
@@ -26,7 +27,8 @@
                     <!-- END: BRAND -->
                     <!-- BEGIN: QUICK SEARCH -->
                     <form class="c-quick-search" action="#">
-                        <input type="text" name="query" placeholder="Type to search..." value="" class="form-control" autocomplete="off">
+                        <input type="text" name="query" placeholder="Type to search..." value="" class="form-control"
+                               autocomplete="off">
                         <span class="c-theme-link">×</span>
                     </form>
                     <!-- END: QUICK SEARCH -->
@@ -37,50 +39,74 @@
                     <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-theme c-fonts-uppercase c-fonts-bold">
                         <ul class="nav navbar-nav c-theme-nav">
                             <li>
-                                <a href="{{ url('homepage') }}" class="c-link dropdown-toggle">Accueil<span class="c-arrow c-toggler"></span></a>
+                                <a href="{{ url('homepage') }}" class="c-link dropdown-toggle">Accueil<span
+                                            class="c-arrow c-toggler"></span></a>
 
                             </li>
                             <li class="c-menu-type-classic">
-                                <a href="{{ url('about') }}" class="c-link dropdown-toggle">A propos<span class="c-arrow c-toggler"></span></a>
+                                <a href="{{ url('about') }}" class="c-link dropdown-toggle">A propos<span
+                                            class="c-arrow c-toggler"></span></a>
                             </li>
                             <li class="c-menu-type-classic">
-                                <a href="javascript:;" class="c-link dropdown-toggle">départements<span class="c-arrow c-toggler"></span></a>
+                                <a href="javascript:;" class="c-link dropdown-toggle">départements<span
+                                            class="c-arrow c-toggler"></span></a>
                                 <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                     <li class="dropdown-submenu">
-                                        <a href="{{ url('departmentmg') }}">Médecine générale<span class="c-arrow c-toggler"></span></a>
+                                        <a href="{{ url('departmentmg') }}">Médecine générale<span
+                                                    class="c-arrow c-toggler"></span></a>
                                     </li>
                                     <li class="dropdown-submenu">
-                                        <a href="{{ url('departmentpsy') }}">Psychologie<span class="c-arrow c-toggler"></span></a>
+                                        <a href="{{ url('departmentpsy') }}">Psychologie<span
+                                                    class="c-arrow c-toggler"></span></a>
                                     </li>
                                     <li class="dropdown-submenu">
-                                        <a href="{{ url('departementprocto') }}">Proctologie<span class="c-arrow c-toggler"></span></a>
+                                        <a href="{{ url('departementprocto') }}">Proctologie<span
+                                                    class="c-arrow c-toggler"></span></a>
                                     </li>
                                     <li class="dropdown-submenu">
-                                        <a href="{{ url('departementsophro') }}">Sophrologie<span class="c-arrow c-toggler"></span></a>
+                                        <a href="{{ url('departementsophro') }}">Sophrologie<span
+                                                    class="c-arrow c-toggler"></span></a>
                                     </li>
                                     <li class="dropdown-submenu">
-                                        <a href="{{ url('departementurgentiste') }}">Urgentistes<span class="c-arrow c-toggler"></span></a>
+                                        <a href="{{ url('departementurgentiste') }}">Urgentistes<span
+                                                    class="c-arrow c-toggler"></span></a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{ url('assurances') }}" class="c-link dropdown-toggle">Assurances<span class="c-arrow c-toggler"></span></a>
+                                <a href="{{ url('assurances') }}" class="c-link dropdown-toggle">Assurances<span
+                                            class="c-arrow c-toggler"></span></a>
 
                             </li>
                             <li>
-                                <a href="{{ url('ded') }}" class="c-link dropdown-toggle">Droits et devoirs<span class="c-arrow c-toggler"></span></a>
+                                <a href="{{ url('ded') }}" class="c-link dropdown-toggle">Droits et devoirs<span
+                                            class="c-arrow c-toggler"></span></a>
                             </li>
                             <li>
-                                <a href="{{ url('contactus') }}" class="c-link dropdown-toggle">Contact<span class="c-arrow c-toggler"></span></a>
+                                <a href="{{ url('contactus') }}" class="c-link dropdown-toggle">Contact<span
+                                            class="c-arrow c-toggler"></span></a>
                             </li>
 
 
-                            <li class="c-search-toggler-wrapper">
+                            {#<li class="c-search-toggler-wrapper">
                                 <a href="#" class="c-btn-icon c-search-toggler"><i class="fa fa-search"></i></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-toggle="modal" data-target="#login-form" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold"><i class="icon-user"></i> Login</a>
-                            </li>
+                            </li>#}
+
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}"
+                                       class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold"><i
+                                                class="icon-user"></i>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="{{ path('fos_user_security_login') }}"
+                                       class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold"><i
+                                                class="icon-user"></i>{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                </li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>

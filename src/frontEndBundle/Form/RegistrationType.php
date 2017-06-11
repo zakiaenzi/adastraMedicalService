@@ -51,10 +51,10 @@ class RegistrationType extends AbstractType
             ->add('specialisation', ChoiceType::class, array(
                 'label' => 'Quelle est votre spécialisation (ig)',
                 'choices' => array(
-                    'Psychologie' => '0',
-                    'Proctologie' => '1',
-                    'Sophrologie' => '2',
-                    'Thanathopractie' => '3'
+                    'Psychologie' => 'Psychologie',
+                    'Proctologie' => 'Proctologie',
+                    'Sophrologie' => 'Sophrologie',
+                    'Thanathopractie' => 'Thanathopractie'
                 ),
                 'attr' => array(
                     'class' => 'form-control c-square c-theme input-lg'
@@ -76,7 +76,6 @@ class RegistrationType extends AbstractType
                 'attr' => array(
                     'class' => 'btn c-theme-btn c-btn-uppercase btn-lg c-btn-bold c-btn-square',
                 )));
-        dump($builder);
     }
 
 

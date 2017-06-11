@@ -74,6 +74,9 @@ fos_user:
     registration:
         form:
             type: frontEndBundle\Form\RegistrationType
+    change_password:
+        form:
+            type: frontEndBundle\Form\ChangePasswordType
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: frontEndBundle\Entity\Doctor

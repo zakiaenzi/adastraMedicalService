@@ -146,4 +146,27 @@ class DefaultController extends Controller
             'title' => 'Nous contacter'
         ));
     }
+
+    /**
+     * @Route("/Medecin/{username}", name="medecin")
+     */
+    public function medecinAction(Request $request, $username)
+    {
+        $repository = $this->getDoctrine()
+            ->getManager()
+            ->getRepository("frontEndBundle:Doctor");
+        $doctor = $repository->findOneBy(['username' => $username]);
+        $title = ucfirst($username);
+        return $this->render('frontEndBundle:Pages:medecin.html.twig', [
+            'title' => $title,
+            'firstname' => $doctor->getFirstname(),
+            'lastname' => $doctor->getLastname(),
+            'phone' => $doctor->getPhone(),
+            'address' => $doctor->getAddress(),
+            'specialty' => $doctor->getSpecialisation(),
+            'skills' => $doctor->getSkills(),
+            'nationality' => $doctor->getNationality(),
+        ]);
+    }
+
 }

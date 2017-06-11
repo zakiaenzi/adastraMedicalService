@@ -1,0 +1,60 @@
+{% extends 'frontEndBundle:Base:blankPlage.html.twig' %}
+
+{% block contentPage %}
+    <div class="col-lg-12 text-center">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo">
+    </div>
+    <h1 class="c-font-bold c-font-uppercase c-font-40 text-center">Los Santos Department of Human services</h1>
+    <div class="col-lg-12" id="bordered">
+        <div class="col-lg-8 col-lg-offset-2 c-border">
+            <h2 class="c-font-uppercase c-font-30 text-center">Fiche de renseignements medecins</h2>
+            <h2 class="c-font-uppercase c-font-30 text-center">et professionnels de sante</h2>
+        </div>
+    </div>
+    <div class="col-lg-12 c-font-20" id="contact">
+        <div class="col-lg-5 col-lg-offset-1 col-md-6">
+            <u><h2 class="c-font-bold c-font-25 headTitle">Contact :</h2></u>
+            <p><span class="c-font-bold">Prénom :</span> {{ firstname }}</p>
+            <p><span class="c-font-bold">Nom :</span> {{ lastname }}</p>
+            <p><span class="c-font-bold">Nationalitée :</span> {{ nationality }}</p>
+            <p><span class="c-font-bold">Téléphone :</span> {{ phone }}</p>
+            <p><span class="c-font-bold">Adresse :</span> {{ address }}</p>
+            <p><span class="c-font-bold">Spécialisation :</span> {{ specialty }}</p>
+        </div>
+        <div class="col-lg-5 col-lg-offset-1 col-md-6">
+            <u><h2 class="c-font-bold c-font-25 headTitle">Formation :</h2></u>
+            <p><span class="c-font-bold">Spécialisation :</span> jksdbkhdbskhbsqbkhsqdb bqs dkj sdqbkjbdksbhjk shqkjdhqskhdkhdskqj hkjqh kh hds sdkj djkqh djkhskhqh djk qhjhqh kqjhjk hsqkjhjkd hfihqgiylgqfhis hqbh fqbhs bhfsbqbqihqf shb hb hqb bkh kfqs sfhh jqhfskjqhfuihsfq iu hfsius fhqil hf hhfqsjk
+            s fqs qf$hsfu qf hsfq j
+             fqsuhbjsfl ùhsf qhji fsq*s qhlh jiqsf s
+             fsqblhfsjjoqshf josf h
+            f
+
+             qshufmh qsof
+            qsj huqsfh fi
+            f huqps u$qsf
+             j uqfpùf
+            jsq ûqf
+            jiou hqfj
+             qfhi* fqijifsq
+             huqofjlk qsd sdqdq</p>
+        </div>
+        <div class="col-lg-12 c-center" id="skills">
+            <u><h2 class="c-font-bold c-font-25 headTitle">Autres compétences pertinentes :</h2></u>
+            <p class="c-font-slim">{{ skills }}</p>
+        </div>
+    </div>
+    <style>
+        h1{
+            padding-top: 130px;
+        }
+        #bordered{
+            padding-top: 40px;
+        }
+        #contact{
+            padding-top: 50px;
+        }
+        #skills{
+            padding-top: 30px;
+        }
+    </style>
+{% endblock %}
