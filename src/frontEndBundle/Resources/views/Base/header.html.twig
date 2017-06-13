@@ -87,12 +87,19 @@
                                             class="c-arrow c-toggler"></span></a>
                             </li>
 
-                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            {% if is_granted("ROLE_MEDECIN") %}
                                 <li>
                                     <a href="{{ url('homepageMedecin') }}" class="c-link dropdown-toggle">Medecin<span
                                                 class="c-arrow c-toggler"></span></a>
                                 </li>
                             {% endif %}
+
+                            {#{% if is_granted("ROLE_LSPD") %}
+                                <li>
+                                    <a href="{{ url('homepageLspd') }}" class="c-link dropdown-toggle">LSPD<span
+                                                class="c-arrow c-toggler"></span></a>
+                                </li>
+                            {% endif %}#}
 
 
                             {#<li class="c-search-toggler-wrapper">

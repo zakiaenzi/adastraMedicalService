@@ -4,9 +4,9 @@ security:
 
     role_hierarchy:
         ROLE_LSPD:        ROLE_USER
-        ROLE_MEDECIN:     ROLE_USER
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_MEDECIN:     ROLE_LSPD
+        ROLE_ADMIN:       ROLE_MEDECIN
+        ROLE_SUPER_ADMIN: ROLE_USER ROLE_ADMIN ROLE_MEDECIN ROLE_LSPD
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
