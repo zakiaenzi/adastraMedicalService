@@ -1,0 +1,18 @@
+{% extends 'frontEndBundle:Base:blankPlage.html.twig' %}
+
+{% block contentPage %}
+<div class="col-lg-12">
+    <div class="col-lg-6">
+        <u><h2 class="c-font-bold c-font-25 headTitle">Votre contact :</h2></u>
+        <p><span class="c-font-bold">Prénom :</span> {{ firstname }}</p>
+        <p><span class="c-font-bold">Nom :</span> {{ lastname }}</p>
+        <p><span class="c-font-bold">Nationalitée :</span> {{ nationality }}</p>
+        <p><span class="c-font-bold">Téléphone :</span> {{ phone }}</p>
+        <p><span class="c-font-bold">Adresse :</span> {{ address }}</p>
+        <p><span class="c-font-bold">Spécialisation :</span> {{ specialty }}</p>
+    </div>
+    <div class="col-lg-6">
+        <button class="btn"><a href="{{ url('homepageMedecin') }}">Ajouter un contact</a></button>
+    </div>
+</div>
+{% endblock %}

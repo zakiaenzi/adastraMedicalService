@@ -28,6 +28,15 @@ class MedecinController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('frontEndBundle:Base:blankPlage.html.twig', ['title' => 'Acceuil']);
+        $user = $this->getUser();
+        return $this->render('frontEndBundle:Pages/Medecin:homepage.html.twig', [
+            'title' => 'Espace médecin',
+            'firstname' => $user->getFirstname(),
+            'lastname' => $user->getLastname(),
+            'nationality' => $user->getNationality(),
+            'phone' => $user->getPhone(),
+            'address' => $user->getAddress(),
+            'specialty' => $user->getSpecialisation(),
+        ]);
     }
 }
