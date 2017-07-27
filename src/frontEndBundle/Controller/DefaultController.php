@@ -2,6 +2,7 @@
 
 namespace frontEndBundle\Controller;
 
+use Doctrine\Common\Util\Debug;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use frontEndBundle\Entity\Contact;
@@ -39,6 +40,21 @@ class DefaultController extends Controller
     public function departmentmgAction()
     {
         return $this->render('frontEndBundle:Pages:departmentmg.html.twig', ['title' => 'Medecine Generale']);
+    }
+
+    /**
+     * @Route("/department/{param}", name="department")
+     */
+    public function departmentAction($param)
+    {
+        //todo: continuer ce dev
+        $department = $this->getDoctrine()->getRepository('frontEndBundle:Department');
+        $department = $department->findOneBy(array('name' => $param));
+
+        return $this->render('frontEndBundle:Pages:department.html.twig', ['title' => $department->getName(),
+            'content' => $department->getContent(),
+            'photo' => $department->getPhoto()
+        ]);
     }
 
     /**

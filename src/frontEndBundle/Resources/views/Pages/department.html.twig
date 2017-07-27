@@ -1,0 +1,10 @@
+{% extends 'frontEndBundle:Base:blankPlage.html.twig' %}
+
+{% block contentPage %}
+    <div class="col-lg-4">
+        <img src="{{ asset(photo) }}" alt="Psychologue" class="img-responsive img-thumbnail">
+    </div>
+    <div class="col-lg-8">
+        {{ content | raw }}
+    </div>
+{% endblock %}

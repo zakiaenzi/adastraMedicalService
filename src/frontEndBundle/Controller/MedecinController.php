@@ -39,4 +39,23 @@ class MedecinController extends Controller
             'specialty' => $user->getSpecialisation(),
         ]);
     }
+
+    /**
+     * @Route("/Medecin/Repertoire", name="medecinRepertory")
+     */
+    public function medecinRepertoryAction()
+    {
+        return $this->render('frontEndBundle:Pages/Medecin:medicRepertory.html.twig', ['title' => 'Répertoire']);
+    }
+
+    /**
+     * Fonction appellée en AJAX
+     *
+     * @Route("/Medecin/Repertoire/{name}", name="searchMedecin")
+     */
+    public function searchMedecinAction($name)
+    {
+        //todo
+        return $this->render('frontEndBundle:Pages/Medecin:medicRepertory.html.twig', ['title' => 'Répertoire']);
+    }
 }
