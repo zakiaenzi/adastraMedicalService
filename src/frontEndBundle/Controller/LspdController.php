@@ -8,6 +8,7 @@
 
 namespace frontEndBundle\Controller;
 
+use AppBundle\Controller\CustomController;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use frontEndBundle\Entity\Contact;
@@ -18,7 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
-class LspdController extends Controller
+class LspdController extends CustomController
 {
     /**
      * @Route("/Lspd", name="homepageLspd")

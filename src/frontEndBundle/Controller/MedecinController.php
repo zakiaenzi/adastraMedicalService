@@ -8,6 +8,7 @@
 
 namespace frontEndBundle\Controller;
 
+use AppBundle\Controller\CustomController;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use frontEndBundle\Entity\Contact;
@@ -21,7 +22,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class MedecinController extends Controller
+class MedecinController extends CustomController
 {
     /**
      * @Route("/Medecin", name="homepageMedecin")

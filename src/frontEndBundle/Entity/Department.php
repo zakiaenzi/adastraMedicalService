@@ -31,6 +31,13 @@ class Department
     /**
      * @var string
      *
+     * @ORM\Column(name="route", type="string", length=255, unique=true)
+     */
+    private $route;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="content", type="text")
      */
     private $content;
@@ -116,6 +123,23 @@ class Department
     {
         $this->photo = $photo;
     }
+
+    /**
+     * @return string
+     */
+    public function getRoute()
+    {
+        return $this->route;
+    }
+
+    /**
+     * @param string $route
+     */
+    public function setRoute($route)
+    {
+        $this->route = $route;
+    }
+
 
 
 }

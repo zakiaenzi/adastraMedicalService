@@ -2,13 +2,14 @@
 
 namespace frontEndBundle\Controller;
 
+use AppBundle\Controller\CustomController;
 use Doctrine\Common\Util\Debug;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use frontEndBundle\Entity\Contact;
 use frontEndBundle\Entity\Doctor;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -16,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends Controller
+class DefaultController extends CustomController
 {
     /**
      * @Route("/", name="homepage")
@@ -44,12 +45,12 @@ class DefaultController extends Controller
 
     /**
      * @Route("/department/{param}", name="department")
+     * @Template()
      */
     public function departmentAction($param)
     {
-        //todo: continuer ce dev
         $department = $this->getDoctrine()->getRepository('frontEndBundle:Department');
-        $department = $department->findOneBy(array('name' => $param));
+        $department = $department->findOneBy(array('route' => $param));
 
         return $this->render('frontEndBundle:Pages:department.html.twig', ['title' => $department->getName(),
             'content' => $department->getContent(),
